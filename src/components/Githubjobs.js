@@ -20,12 +20,12 @@ const Githubjobs = () => {
 
           {value => {
               if(value.jobs !== undefined) {
-                return value.jobs.map((item,i )=> {
-                    return  ( !value.loading ? <Githubjob key={item.id} id={selected} index={i} company={item.company} title={item.title} description={item.description} location={item.location} img={item.company_logo} showCard={show} onClick={()=> showCard(i)}/> : <span>Loading</span>
-                    )
+                return  !value.loading ? value.jobs.map((item,i )=> {
+                    return  (  <Githubjob key={item.id} id={selected} index={i} company={item.company} title={item.title} description={item.description} location={item.location} img={item.company_logo} showCard={show} onClick={()=> showCard(i)}/> 
+                    ) 
                   
                     
-                })
+                }) : <span>Loading</span>
             }
           }}
 
